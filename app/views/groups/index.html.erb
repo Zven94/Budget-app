@@ -1,18 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Groups</h1>
+<div class="header-content">
+  <h2>Categories</h2>
+</div>
 
-<div id="groups">
+<div class="categories-content">
   <% if @groups.any? %>
     <% @groups.each do |group| %>
-      <div>
-        <% if group.icon.attached? %>
-          <%= image_tag group.icon %>
-        <% end %>
-        <%= group.name %>
-        <%= group.id %>
-        <%= link_to "Edit this group", edit_user_group_path(current_user, group) %>
-        <p>Total Transactions Amount: <%= total_entity_amount(group) %></p>
+      <div class="category-content">
+        <div style="width:5rem" >
+          <% if group.icon.attached? %>
+            <%= image_tag group.icon %>
+          <% end %>
+        </div>
+        <div style="width:10rem">
+          <%= group.name %>
+        </div>
+        <div style="width:8rem">
+          <p>Total Transactions Amount: <%= total_entity_amount(group) %></p>
+        </div>
       </div>
     <% end %>
   <% else %>
@@ -20,4 +26,6 @@
   <% end %>
 </div>
 
-<%= link_to "New group", new_user_group_path(current_user) %>
+<div class="newGroup-content">
+  <%= link_to "New group", new_user_group_path(current_user) %>
+</div>
