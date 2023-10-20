@@ -1,14 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Entities</h1>
+<h1>Total amount: <%= @total_amount %> </h1> 
 
 <div id="entities">
-  <% @entities.each do |entity| %>
-    <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", entity %>
-    </p>
+  <% if @entities.any? %>
+    <% @entities.each do |entity| %>
+      <div>
+        <% if entity.icon.attached? %>
+          <%= image_tag entity.icon %>
+        <% end %>
+        <% if entity.group.present? && entity.group.icon.attached? %>
+          <%= image_tag entity.group.icon %>
+        <% end %>
+        <% entity.groups.each do |group| %>
+          <% if group.icon.attached? %>
+            <%= image_tag group.icon %>
+          <% end %>
+        <% end %>
+        <%= entity.name %>
+        <%= entity.id %>
+        <%= entity.amount %>
+        <%= link_to "Show this entity", user_entity_path(current_user, entity) %>
+        <%= link_to "Edit this entity", edit_user_entity_path(current_user, entity) %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No hay Transactions disponibles.</p>
   <% end %>
 </div>
-
-<%= link_to "New entity", new_entity_path %>
+<%= link_to "New", new_user_entity_path(current_user) %>
+<%= link_to "<<", root_path %>

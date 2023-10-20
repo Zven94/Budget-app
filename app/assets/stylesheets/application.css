@@ -23,3 +23,8 @@
    justify-content: space-around;
    align-items: center;
  }
+
+ img {
+   width: 3rem;
+   height: auto
+ }

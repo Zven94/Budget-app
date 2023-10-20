@@ -1,4 +1,6 @@
 class Entity < ApplicationRecord
   belongs_to :user
-  has_many :group
+  belongs_to :group
+  has_many :groups
+  has_one_attached :icon
 end

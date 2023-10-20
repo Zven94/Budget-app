@@ -1,4 +1,4 @@
-<%= form_with(model: entity) do |form| %>
+<%= form_with(model: @entity, url: user_entities_path(@user)) do |form| %>
   <% if entity.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
@@ -12,6 +12,26 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
+
+  <div>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div>
+    <%= form.label :group_id %>
+    <%= form.collection_select :group_id, @groups, :id, :name, prompt: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+
 <% end %>

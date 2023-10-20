@@ -3,6 +3,7 @@
     <%= link_to "Home", root_path%>
     <%= button_to "Sign-Out", destroy_user_session_path, method: :delete%>
     <%= link_to "Categories", user_groups_path(current_user) %>
+    <%= link_to "Transactions", user_entities_path(current_user) %>
   <% else %>
     <%= link_to "Home", root_path%>
     <%= button_to "Log-In", new_user_session_path %>

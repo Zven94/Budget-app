@@ -3,15 +3,19 @@
 <h1>Groups</h1>
 
 <div id="groups">
-  <% if @groups.empty? %>
-    <p>No hay grupos agregados.</p>
-  <% else %>
+  <% if @groups.any? %>
     <% @groups.each do |group| %>
-      <%= render group %>
-      <p>
-        <%= link_to "Show this group", group %>
-      </p>
+      <div>
+        <% if group.icon.attached? %>
+          <%= image_tag group.icon %>
+        <% end %>
+        <%= group.name %>
+        <%= group.id %>
+        <%= link_to "Edit this group", edit_user_group_path(current_user, group) %>
+      </div>
     <% end %>
+  <% else %>
+    <p>No hay grupos disponibles.</p>
   <% end %>
 </div>
 
