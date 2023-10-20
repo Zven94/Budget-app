@@ -1,10 +1,19 @@
 class GroupsController < ApplicationController
+  include GroupsHelper
   def index
     @groups = current_user.groups
   end
   def new
     @user = current_user
     @group = Group.new
+  end
+  def show
+    @group = Group.includes(:entities).find(params[:id])
+  end
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to groups_path, notice: "Group was successfully deleted."
   end
   def create
     @user = current_user
@@ -37,6 +46,10 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end  
 
+  def total_transaction_amount(group)
+    group.transactions.sum(:amount)
+  end
+  
   # Only allow a list of trusted parameters through.
   def group_params
     params.require(:group).permit(:name, :icon)

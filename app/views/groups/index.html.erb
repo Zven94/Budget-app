@@ -12,6 +12,7 @@
         <%= group.name %>
         <%= group.id %>
         <%= link_to "Edit this group", edit_user_group_path(current_user, group) %>
+        <p>Total Transactions Amount: <%= total_entity_amount(group) %></p>
       </div>
     <% end %>
   <% else %>
