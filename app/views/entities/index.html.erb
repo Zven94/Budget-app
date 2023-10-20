@@ -1,33 +1,36 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Entities</h1>
-<h1>Total amount: <%= @total_amount %> </h1> 
-
-<div id="entities">
-  <% if @entities.any? %>
-    <% @entities.each do |entity| %>
-      <div>
-        <% if entity.icon.attached? %>
-          <%= image_tag entity.icon %>
-        <% end %>
-        <% if entity.group.present? && entity.group.icon.attached? %>
-          <%= image_tag entity.group.icon %>
-        <% end %>
-        <% entity.groups.each do |group| %>
-          <% if group.icon.attached? %>
-            <%= image_tag group.icon %>
+<div class="login-content">
+  <h2 class="header-content-actions">Transactions</h2>
+  <div class="amount-content">
+    <h3>Total amount: <%= @total_amount %> </h3> 
+  </div>
+  <div class="transactions-content">
+    <% if @entities.any? %>
+      <% @entities.each do |entity| %>
+        <div class="transaction-content">
+          <% if entity.icon.attached? %>
+            <%= image_tag entity.icon %>
           <% end %>
-        <% end %>
-        <%= link_to entity.name, user_group_path(current_user, entity.group) %>
-        <%= entity.id %>
-        <%= entity.amount %>
-        <%= link_to "Show this entity", user_entity_path(current_user, entity) %>
-        <%= link_to "Edit this entity", edit_user_entity_path(current_user, entity) %>
-      </div>
+          <% if entity.group.present? && entity.group.icon.attached? %>
+            <%= image_tag entity.group.icon %>
+          <% end %>
+          <% entity.groups.each do |group| %>
+            <% if group.icon.attached? %>
+              <%= image_tag group.icon %>
+            <% end %>
+          <% end %>
+          <%= link_to entity.name, user_group_path(current_user, entity.group) %>
+          <%= entity.id %>
+          <%= entity.amount %>
+          <%# <%= link_to "Show this entity", user_entity_path(current_user, entity) %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No hay Transactions disponibles.</p>
     <% end %>
-  <% else %>
-    <p>No hay Transactions disponibles.</p>
-  <% end %>
+  </div>
+  <div class="newGroup-content">
+    <%= link_to "New Transaction", new_user_entity_path(current_user), class:"newTrans-link" %>
+  </div>
+  <%= link_to "<<", root_path %>
+  <p style="color: green"><%= notice %></p>
 </div>
-<%= link_to "New", new_user_entity_path(current_user) %>
-<%= link_to "<<", root_path %>

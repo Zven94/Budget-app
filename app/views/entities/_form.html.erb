@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="category-div">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="category-div">
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>
 
-  <div>
+  <div class="category-div">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div>
-    <%= form.label :group_id %>
+  <div class="category-div">
+    <%= form.label :group_id, "Category" %>
     <%= form.collection_select :group_id, @groups, :id, :name, prompt: true %>
   </div>
 
-  <div>
-    <%= form.submit "Save" %>
+  <div class="category-div">
+    <%= form.submit "Save", class:"button" %>
   </div>
 
 <% end %>

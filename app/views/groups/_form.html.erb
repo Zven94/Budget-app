@@ -1,16 +1,16 @@
 <%= form_with(model: @group, url: user_groups_path(@user)) do |form| %>
     
-  <div>
+  <div class="category-div">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :entity_id, "Select an Entity" %>
-    <%= form.collection_select :entity_id, Entity.all, :id, :name, prompt: "Select an entity" %>
+  <div class="category-div">
+    <%= form.label :entity_id, "Select a Transaction" %>
+    <%= form.collection_select :entity_id, Entity.all, :id, :name, prompt: "Select a Transaction" %>
   </div>
 
-  <div>
+  <div class="category-div">
     <% if @group.persisted? && @group.icon.attached? %>
       <%= image_tag @group.icon %>
     <%end%>
@@ -30,6 +30,6 @@
   <% end %>
 
   <div>
-    <%= form.submit "Save" %>
+    <%= form.submit "Save", class:"button" %>
   </div>
 <% end %>
