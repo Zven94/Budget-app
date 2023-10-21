@@ -58,7 +58,7 @@ This project is inspired by the original design idea by Gregoire Vella on Behanc
 
 ## 📸 Screenshots <a name="screenshots"></a>
 
-![Alt text](image.png)
+![Alt text](https://github.com/Zven94/Budget-app/blob/dev/image.PNG)
 ![Alt text](image-1.png)
 ![Alt text](image-2.png)
 ![Alt text](image-3.png)
