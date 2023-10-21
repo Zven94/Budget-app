@@ -28,9 +28,9 @@
       <p>No hay Transactions disponibles.</p>
     <% end %>
   </div>
-  <div class="newGroup-content">
-    <%= link_to "New Transaction", new_user_entity_path(current_user), class:"newTrans-link" %>
-  </div>
   <%= link_to "<<", root_path %>
   <p style="color: green"><%= notice %></p>
+</div>
+<div class="newGroup-content">
+  <%= link_to "New Transaction", new_user_entity_path(current_user), class:"newTrans-link" %>
 </div>

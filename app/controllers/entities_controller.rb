@@ -2,7 +2,6 @@ class EntitiesController < ApplicationController
   def index
     @entities = Entity.all
     @total_amount = @entities.sum(:amount)
-
   end
   def new
     @user = current_user
