@@ -29,7 +29,7 @@ Welcome to Libra, your personal finance management application built with Ruby o
 
 This project is inspired by the original design idea by Gregoire Vella on Behance, and it is used under the Creative Commons license.
 
-- Video-Demo: [Libra](https://www.loom.com/share/789a49dc0b5d4fcc8093730c40305029)
+- ![Video-Demo:](https://www.loom.com/share/789a49dc0b5d4fcc8093730c40305029)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,9 +59,9 @@ This project is inspired by the original design idea by Gregoire Vella on Behanc
 ## 📸 Screenshots <a name="screenshots"></a>
 
 ![Alt text](https://github.com/Zven94/Budget-app/blob/dev/image.PNG)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
+![Alt text](https://github.com/Zven94/Budget-app/blob/dev/image-1.PNG)
+![Alt text](https://github.com/Zven94/Budget-app/blob/dev/image-2.PNG)
+![Alt text](https://github.com/Zven94/Budget-app/blob/dev/image-3.PNG)
 
 
 ## 💻 Getting Started  <a name="started"></a>
