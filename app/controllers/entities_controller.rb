@@ -3,16 +3,18 @@ class EntitiesController < ApplicationController
     @entities = Entity.all
     @total_amount = @entities.sum(:amount)
   end
+
   def new
     @user = current_user
     @groups = Group.all
     @entity = Entity.new
   end
+
   def create
     @user = current_user
     @groups = Group.all
     @entity = Entity.new(entity_params)
-    
+
     if @entity.save
       redirect_to user_entities_path(@user), notice: 'Entity was successfully created.'
     else

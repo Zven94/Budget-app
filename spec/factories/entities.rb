@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :entity do
-    name { "Nico" }
+    name { 'Nico' }
     amount { 100.0 }
     user
     group

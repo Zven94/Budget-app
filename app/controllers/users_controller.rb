@@ -12,12 +12,12 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    if params[:id] != "sign_out"
-      @user = User.find(params[:id])
-    else
+    if params[:id] == 'sign_out'
       sign_out(current_user)
       redirect_to root_path
-    end  
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   def update
