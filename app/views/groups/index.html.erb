@@ -1,0 +1,35 @@
+<div class="header-content">
+  <h2>Categories</h2>
+</div>
+
+<div class="categories-content">
+  <% if @groups.any? %>
+    <% @groups.each do |group| %>
+      
+    <%= link_to user_group_path(current_user, group), class:"category-link-content" do %>
+      <div class="category-content">
+        <div style="width:5rem" >
+          <% if group.icon.attached? %>
+            <%= image_tag group.icon %>
+          <% end %>
+        </div>
+        <div style="width:10rem">
+          <%= group.name %>
+        </div>
+        <div style="width:8rem">
+          <p>Total Transactions Amount: <%= total_entity_amount(group) %></p>
+        </div>
+      </div>
+    <% end %>
+
+    <% end %>
+  <% else %>
+    <p>No available category.</p>
+  <% end %>
+  <%= link_to "<<", root_path %>
+  <p style="color: green"><%= notice %></p>
+</div>
+
+<div class="newGroup-content">
+  <%= link_to "New Category", new_user_group_path(current_user), class:"newGroup-link" %>
+</div>

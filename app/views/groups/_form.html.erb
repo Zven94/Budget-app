@@ -1,0 +1,35 @@
+<%= form_with(model: @group, url: user_groups_path(@user)) do |form| %>
+    
+  <div class="category-div">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="category-div">
+    <%= form.label :entity_id, "Select a Transaction" %>
+    <%= form.collection_select :entity_id, Entity.all, :id, :name, prompt: "Select a Transaction" %>
+  </div>
+
+  <div class="category-div">
+    <% if @group.persisted? && @group.icon.attached? %>
+      <%= image_tag @group.icon %>
+    <%end%>
+    <%= form.label :icon %>
+    <%= form.file_field :icon %>
+  </div>
+
+  <% if @group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+      <ul>
+        <% @group.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit "Save", class:"button" %>
+  </div>
+<% end %>

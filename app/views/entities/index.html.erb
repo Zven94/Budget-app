@@ -1,0 +1,38 @@
+<div class="header-content">
+  <h2>Transactions</h2>
+</div>
+
+<div class="login-content">
+
+  <div class="amount-content">
+    <h3>Total amount: <%= @total_amount %> </h3> 
+  </div>
+  <div class="transactions-content">
+    <% if @entities.any? %>
+      <% @entities.each do |entity| %>
+        <div class="transaction-content">
+          <% if entity.icon.attached? %>
+            <%= image_tag entity.icon %>
+          <% end %>
+          <% if entity.group.present? && entity.group.icon.attached? %>
+            <%= image_tag entity.group.icon %>
+          <% end %>
+          <% entity.groups.each do |group| %>
+            <% if group.icon.attached? %>
+              <%= image_tag group.icon %>
+            <% end %>
+          <% end %>
+          <%= link_to entity.name, user_group_path(current_user, entity.group) %>
+          <%= entity.amount %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No transactions yet.</p>
+    <% end %>
+  </div>
+  <%= link_to "<<", root_path %>
+  <p style="color: green"><%= notice %></p>
+</div>
+<div class="newGroup-content">
+  <%= link_to "New Transaction", new_user_entity_path(current_user), class:"newTrans-link" %>
+</div>

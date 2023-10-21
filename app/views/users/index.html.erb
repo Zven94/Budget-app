@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Home</h1>
+
+<% if user_signed_in? %>
+  <div id="users">
+    <% @users.each do |user| %>
+      <%= render user %>
+      <p>
+        <%= link_to "Show this user", user %>
+      </p>
+    <% end %>
+  </div>
+  <%= link_to "New user", new_user_path %>
+<% else %>
+  <p>Welcome to our application! Please <%= link_to "log in", new_user_session_path %> to access user information.</p>
+<% end %>
+

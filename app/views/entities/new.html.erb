@@ -1,0 +1,11 @@
+<div class="login-content">
+  <h2 class="header-content-actions">New Transaction</h2>
+
+<%= render "form", entity: @entity %>
+
+<br>
+
+<div>
+  <%= link_to "<<", root_path %> |
+  <%= link_to "Back to Transactions", user_entities_path %>
+</div>
