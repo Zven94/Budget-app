@@ -1,6 +1,6 @@
 class EntitiesController < ApplicationController
   def index
-    @entities = Entity.all
+    @entities = current_user.entities
     @total_amount = @entities.sum(:amount)
   end
 

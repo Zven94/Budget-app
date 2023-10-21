@@ -23,9 +23,7 @@
             <% end %>
           <% end %>
           <%= link_to entity.name, user_group_path(current_user, entity.group) %>
-          <%= entity.id %>
           <%= entity.amount %>
-          <%# <%= link_to "Show this entity", user_entity_path(current_user, entity) %>
         </div>
       <% end %>
     <% else %>
