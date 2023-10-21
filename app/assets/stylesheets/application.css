@@ -34,7 +34,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 15vh;
   font-size: 2rem;
 }
@@ -154,7 +154,7 @@ button,
   align-items: center;
   width: 30%;
   padding: 1rem;
-  margin: 5rem;
+  margin-top: 5rem;
 }
 
 .name-content {
