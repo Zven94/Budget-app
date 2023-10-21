@@ -222,17 +222,15 @@ button,
 }
 
 .log-in:hover {
-  width: 8rem;
+  width: 100%;
   padding: 0.5rem;
-  border-radius: 0.5rem;
   background-color: #007bff;
   color: #fff;
 }
 
 .sign-up:hover {
-  width: 8rem;
+  width: 100%;
   padding: 0.5rem;
-  border-radius: 0.5rem;
   background-color: #28a745;
   color: #fff;
 }
