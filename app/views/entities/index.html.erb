@@ -1,5 +1,9 @@
+<div class="header-content">
+  <h2>Transactions</h2>
+</div>
+
 <div class="login-content">
-  <h2 class="header-content-actions">Transactions</h2>
+
   <div class="amount-content">
     <h3>Total amount: <%= @total_amount %> </h3> 
   </div>
@@ -25,7 +29,7 @@
         </div>
       <% end %>
     <% else %>
-      <p>No hay Transactions disponibles.</p>
+      <p>No transactions yet.</p>
     <% end %>
   </div>
   <%= link_to "<<", root_path %>
