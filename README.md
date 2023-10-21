@@ -54,7 +54,7 @@ This project is inspired by the original design idea by Gregoire Vella on Behanc
 
 ## 💻 Live Demo  <a name="live-demo"></a>
 
-- Live-Demo: [Libra](https://budget-app-fk5s.onrender.com/users/sign_in)
+- Live-Demo: [Libra](https://budget-app-fk5s.onrender.com/)
 
 ## 📸 Screenshots <a name="screenshots"></a>
 
