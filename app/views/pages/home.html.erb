@@ -1,0 +1,31 @@
+<h2 class="name-content">Libra</h2>
+<div class="login-content">
+  <div class="home-page-splash">
+    <% if user_signed_in? %>
+      <%= link_to "Categories", user_groups_path(current_user), class: "log-in" %>
+      <%= link_to "Transactions", user_entities_path(current_user), class: "log-in" %>
+    <% else %>
+      <%= link_to "Log-in", new_user_session_path, class: "log-in" %>
+      <%= link_to "Sign-up", new_user_registration_path, class: "sign-up" %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var groupsRedirect = document.getElementById("groups-redirect");
+    var entitiesRedirect = document.getElementById("entities-redirect");
+
+    if (groupsRedirect) {
+      groupsRedirect.addEventListener("click", function() {
+        window.location.href = "<%= new_user_session_path %>";
+      });
+    }
+
+    if (entitiesRedirect) {
+      entitiesRedirect.addEventListener("click", function() {
+        window.location.href = "<%= new_user_session_path %>";
+      });
+    }
+  });
+</script>
