@@ -3,10 +3,10 @@ class PagesController < ApplicationController
   def home
     @current_user = current_user if user_signed_in?
   end
+
   private
 
   def set_current_user
     @current_user = current_user if user_signed_in?
   end
-
 end
