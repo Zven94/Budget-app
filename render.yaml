@@ -1,7 +1,7 @@
 databases:
   - name: budget
     plan: free
-    databaseName: budget
+    databaseName: budget_2fvx
     user: budget_user
 
 services:
