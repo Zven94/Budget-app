@@ -5,6 +5,8 @@
 <div class="categories-content">
   <% if @groups.any? %>
     <% @groups.each do |group| %>
+      
+    <%= link_to user_group_path(current_user, group), class:"category-link-content" do %>
       <div class="category-content">
         <div style="width:5rem" >
           <% if group.icon.attached? %>
@@ -18,6 +20,8 @@
           <p>Total Transactions Amount: <%= total_entity_amount(group) %></p>
         </div>
       </div>
+    <% end %>
+
     <% end %>
   <% else %>
     <p>No available category.</p>

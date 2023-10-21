@@ -6,7 +6,7 @@ class EntitiesController < ApplicationController
 
   def new
     @user = current_user
-    @groups = Group.all
+    @groups = @user.groups
     @entity = Entity.new
   end
 
